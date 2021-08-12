@@ -6,6 +6,11 @@ package com.bridgelabz;
  * @since 2021-08-12
  */
 class Contact {
+
+    private String firstName, lastName, address, city, state, email;
+    private int zip;
+    private long phoneNumber;
+
     public Contact(String firstName, String lastName, String address, String city, String state, String email, int zip, long phoneNumber ){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,9 +21,6 @@ class Contact {
         this.zip = zip;
         this.phoneNumber = phoneNumber;
     }
-    private String firstName, lastName, address, city, state, email;
-    private int zip;
-    private long phoneNumber;
 
     public String getFirstName() {
         return firstName;
