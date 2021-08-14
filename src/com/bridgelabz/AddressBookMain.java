@@ -34,13 +34,19 @@ public class AddressBookMain {
         System.out.println("Enter the phone number");
         info.setPhoneNumber(sc.nextLong());
         arrayDetails.add(info);
+    }
+
+    /**
+     * This method is used to display the details
+     */
+
+    public void display(){
         System.out.println(arrayDetails);
     }
 
     /**
      *This method is used to edit the details in address book
      */
-
     public void editDetails() {
         System.out.println("Confirm your first name to edit details: ");
         String confirmName = sc.next();
@@ -85,8 +91,6 @@ public class AddressBookMain {
                         arrayDetails.get(i).setEmail(sc.next());
                         break;
                 }
-                System.out.println("Edited list is: ");
-                System.out.println(arrayDetails);
             } else
                 System.out.println("Enter a valid First name");
         }
@@ -110,17 +114,19 @@ public class AddressBookMain {
         }
     }
 
-
     public static void main(String[] args) {
         AddressBookMain details = new AddressBookMain();
-        details.addDetails();
-        int i = 0;
-        while (i == 0) {
-            System.out.println("Welcome to Address Book Program");
-            System.out.println("What do you want to do: ");
-            System.out.println("1.Add details.\n2.Edit details.\n3.Delete Details.");
-            int choose = sc.nextInt();
-            switch (choose) {
+        int  input;
+        int ans;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("1.Add a contact");
+            System.out.println("2.Edit a contact");
+            System.out.println("3.Delete a contact");
+            System.out.println("4.Display a contact");
+            input = scanner.nextInt();
+            switch(input)
+            {
                 case 1:
                     details.addDetails();
                     break;
@@ -130,13 +136,13 @@ public class AddressBookMain {
                 case 3:
                     details.deleteDetails();
                     break;
-                default:
-                    i = 1;
-                    System.out.println("Wrong option");
+                case 4:
+                    details.display();
                     break;
+                default:System.out.println("Invalid option");
             }
-        }
-
+            System.out.println("Do you want to continue?(0/1)");
+            ans=scanner.nextInt();
+        }while(ans==1);
     }
 }
-
