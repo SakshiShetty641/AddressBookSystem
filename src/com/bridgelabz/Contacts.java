@@ -2,8 +2,20 @@ package com.bridgelabz;
  class Contacts {
 
      private String firstName, lastName, address, city, state, email;
-     private int zip;
+     private long zip;
      private long phoneNumber;
+
+     public Contacts (String firstName, String lastName, String address, String city, String state, Long zip,
+                        Long phoneNumber, String email) {
+         this.firstName = firstName;
+         this.lastName = lastName;
+         this.address = address;
+         this.city = city;
+         this.state = state;
+         this.zip = zip;
+         this.phoneNumber = phoneNumber;
+         this.email = email;
+     }
 
      public String getFirstName() {
          return firstName;
@@ -53,11 +65,11 @@ package com.bridgelabz;
          this.email = email;
      }
 
-     public int getZip() {
+     public long getZip() {
          return zip;
      }
 
-     public void setZip(int zip) {
+     public void setZip(long zip) {
          this.zip = zip;
      }
 
