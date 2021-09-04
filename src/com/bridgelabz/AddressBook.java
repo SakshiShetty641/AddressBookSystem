@@ -293,6 +293,9 @@ public class AddressBook {
                 AddressBook.sortBy(Contacts::getState).forEach(System.out::println);
                 break;
             case 5:
+                AddressBook.sortBy(Contacts :: getZip).forEach(System.out::println);
+                break;
+            case 6:
                 return;
             default:
                 System.out.println("INVALID CHOICE!");
